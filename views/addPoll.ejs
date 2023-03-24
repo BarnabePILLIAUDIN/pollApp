@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style/addPoll.css" />
+    <title>Polls app</title>
+  </head>
+  <body>
+    <%- include("partials/navbar",{page:"addPoll",connected}) %>
+    <form action="/addPoll" method="post" id="addForm">
+      <h1>Add new Poll</h1>
+      <div class="to-center">
+        <label for="question">What's yours question *</label>
+        <br />
+        <input
+          type="text"
+          placeholder="Your question"
+          name="question"
+          id="question"
+        />
+        <div id="answers">
+          <label for="answer1">Answer 1 *</label>
+          <br />
+          <input type="text" placeholder="Answer 1" name="answer1" id="a1" />
+          <br />
+          <label for="answer2">Answer 2 *</label>
+          <br />
+          <input type="text" placeholder="Answer 2" name="answer2" id="a2" />
+          <br />
+          <label for="answer1">Answer 3</label>
+          <br />
+          <input type="text" placeholder="Answer 3" name="answer3" id="a3" />
+          <br />
+          <label for="answer1">Answer 4</label>
+          <br />
+          <input type="text" placeholder="Answer 4" name="answer4" id="a4" />
+          <br />
+          <label for="answer1">Answer 5</label>
+          <br />
+          <input type="text" placeholder="Answer 5" name="answer5" id="a5" />
+          <br />
+        </div>
+      </div>
+      <button id="submit" type="submit">Submit</button>
+      <p>* required</p>
+    </form>
+    <script src="/javascript/handleNavbar.js"></script>
+    <script src="javascript/checkaddpollform.js"></script>
+  </body>
+</html>

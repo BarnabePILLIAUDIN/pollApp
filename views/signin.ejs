@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/style/signup.css" />
+    <title>Polls app</title>
+  </head>
+  <body>
+    <% if(error){%>
+    <div class="error-container">
+      <h2 class="error-title"><%=error%></h2>
+    </div>
+    <%}%>
+    <div class="navbar">
+      <%- include("partials/navbar",{page:"signin",connected})%>
+    </div>
+    <div class="form-container">
+      <h2>Sign in</h2>
+      <form action="/login" method="post">
+        <div class="email-container">
+          <label for="email">Email</label>
+          <input
+            type="email"
+            name="email"
+            placeholder="firstname.lastname@exemple.com"
+            id="email"
+          />
+        </div>
+        <div class="password-container">
+          <label for="password">Password</label>
+          <input
+            type="text"
+            name="password"
+            placeholder="Password"
+            id="password"
+          />
+        </div>
+        <button type="submit">Sign in</button>
+      </form>
+    </div>
+    <script src="/javascript/handleNavbar.js"></script>
+    <script src="javascript/checksignupform.js"></script>
+  </body>
+</html>

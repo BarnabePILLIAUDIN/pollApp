@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style/index.css" />
+    <title>Polls app</title>
+  </head>
+  <body>
+    <%- include("partials/navbar.ejs",{page:"home",connected}) %>
+    <section class="pollcontainer">
+      <h2>Some polls</h2>
+      <% polls.forEach(({question,id}) => { %>
+      <div class="poll-preview">
+        <h3><%=question%></h3>
+        <a href=<%=`/vote/${id}`%>>Answer</a>
+      </div>
+      <%}) %>
+      <a href="/allPolls/5" id="see-more">See more</a>
+    </section>
+    <script src="javascript/handleNavbar.js"></script>
+  </body>
+</html>

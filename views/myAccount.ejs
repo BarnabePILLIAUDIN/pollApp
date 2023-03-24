@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/style/myaccount.css" />
+    <title>Poll app</title>
+  </head>
+  <body>
+    <%- include("partials/navbar",{page:"myaccount",connected}) %>
+    <h2>Hello <%=first%> <%=last%></h2>
+    <div class="pollcontainer">
+    <h2>My polls</h2>
+    <%if(myPolls.length===0){%>
+      <div>
+        <h3 class="default-text">You don't any polls for the momement</h3>
+        <a href="/addPoll" class="default-link">Add one</a>
+      </div>
+    <%}%>
+    <%myPolls.forEach(({question,_id})=>{%>
+      <div class="poll-preview">
+        <h3><%=question%></h3>
+        <a href=<%=`/results/${_id}`%> >See results</a>
+      </div>
+      <%})%>
+    </div>
+    <a href="/logout" class="default-link">Logout</a>
+    <script src="javascript/handleNavbar.js"></script>
+  </body>
+</html>

@@ -1,0 +1,34 @@
+<div class="nav-container">
+  <h2 id="navbar-toggler">|||</h2>
+  <nav>
+    <h1>poll app</h1>
+    <ul>
+      <% if(page!="home"){ %>
+      <li>
+        <a href="/">Home page</a>
+      </li>
+      <%} if(page!="addPoll"){ %>
+      <li>
+        <a href="/addPoll">Add a poll</a>
+      </li>
+      <%} if (page!= "allPolls"){%>%>
+      <li>
+        <a href="/allPolls/5">See all polls</a>
+      </li>
+      <% }if(page!="signup" && !connected){%>
+      <li>
+        <a href="/signup">Sign up</a>
+      </li>
+      <%}if(page!="signin" && !connected){%>
+      <li>
+        <a href="/signin">Sign in</a>
+      </li>
+      <%}if(page!="myaccount" && connected ){%>
+      <li>
+        <a href="/myaccount">My account</a>
+      </li>
+      <%}%>
+    </ul>
+    <h2 id="navbar-toggler-2">&leftarrow;</h2>
+  </nav>
+</div>

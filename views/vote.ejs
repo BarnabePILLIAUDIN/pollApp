@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/style/vote.css" />
+    <title>Polls app</title>
+  </head>
+  <body>
+    <%- include("partials/navbar",{page:"vote",connected}) %>
+    <div class="vote-container">
+      <form action=<%=`/getvote/${poll.id}`%> method="post">
+        <h1><%=poll.question%></h1>
+        <div class="answers-container">
+          <%poll.choices.forEach((element)=>{%>
+          <div class="answer">
+            <%if(vote){%>
+              <input type="checkbox" name="value" value="<%=element%>" />
+            <%}%>
+            <%if(totalAnswer){%>
+              <h2><%=element%> (<%= results[element]?? 0%> votes/ <%= ((results[element]?? 0) / totalAnswer).toFixed(2)%>%)</h2>
+              <%}else{%>
+              <h2><%=element%> (0 vote)</h2>
+              <%}%>
+          </div>
+          <%})%>
+        </div>
+        <h3>Total: <%=totalAnswer%> votes</h3>
+        <%if(vote){%>
+          <button type="submit">Vote</button>
+        <%}%>
+      </form>
+    </div>
+    <script src="/javascript/handleNavbar.js"></script>
+    <script src="/javascript/checkvote.js"></script>
+  </body>
+</html>

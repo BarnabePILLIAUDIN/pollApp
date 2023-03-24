@@ -1,0 +1,114 @@
+nav{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 1.5% 50px;
+  gap: 50px;
+  background: $bg1;
+  transition: 0.5s;
+  @media screen and (max-width:1000px) {
+    display:block;
+    float: left;
+    width: 250px;
+    position: absolute;
+    top: 0;
+    flex-direction: column;
+    height: 100%;
+    left:-100%;
+    padding: 0;
+  }
+  h1{
+    text-transform: uppercase;
+    font-weight: bold;
+    color: $bg1;
+    background: $text1;
+    font-size: 2rem;
+    padding: 1%;
+    border-radius: 10px;
+    height: 100%;
+    max-width: 230px;
+  @media screen and (max-width:1000px) {
+    text-align: center;
+    max-height: 60px;
+    font-size: 1.5rem;
+    border-radius: 0;
+    max-width: 250px;
+    padding-top: 5%;
+  }
+}
+  ul{
+    list-style: none;
+    display:flex;
+    margin-left: 2%;
+    gap: 30px;
+    width:70%;
+    @media screen and (max-width:1225px) {
+      gap:20px;
+    }
+    @media screen and (max-width:1000px) {
+      flex-direction: column;
+      margin: 10% 0;
+      width: 100%;
+    }
+    li{
+      width: 100%;
+      text-align: center;
+      transition:0.5s;
+      border-radius: 15px;
+      a{
+        color: $text1;
+        text-decoration: none;
+        text-transform: uppercase;
+        font-weight: bold;
+        border-radius: 10px;
+        padding: 6% 8%;
+        font-size:1.5rem;
+        transition: 0.5s;
+        &:hover{
+          color: $bg1;
+          background: $text1;
+        }
+        @media screen and (max-width:1500px) {
+          font-size: 1.20rem;
+        }
+        @media screen and (max-width:1225px) {
+          font-size: 0.9rem;
+        }
+        @media screen and (max-width:1000px) {
+          font-size: 1.25rem;
+        }
+      }
+      @media screen and (max-width:1000px) {
+        margin: 5II% 0;;
+        width: 100%;
+      }
+    }
+  }
+}
+
+#navbar-toggler{
+  font-size: 3rem;
+  color: $text1;
+  transform: rotate(90deg);
+  height: 100px;
+  width:50px;
+  user-select: none;
+  &:hover{
+    cursor: pointer
+  }
+  @media screen and (min-width:1001px) {
+    position: absolute;
+    top:-100%;
+  }
+}
+#navbar-toggler-2{
+  position: absolute;
+  top:150%;
+  left:5%;
+  color: $text1;
+  font-size: 3rem;
+  user-select: none;
+  &:hover {
+    cursor: pointer
+  }
+}

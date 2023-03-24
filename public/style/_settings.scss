@@ -1,0 +1,22 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+//vars
+$bg1:rgb(20, 20, 20);
+$bg2:rgb(203 213 225);
+
+$text1:wheat;
+
+$yellow:#FEBE10;
+$green:#03C03C;
+
+$border1: 2px $text1 solid; 
+$border2: 5px $text1 solid;
+
+body{
+  background: $bg2;
+}
+

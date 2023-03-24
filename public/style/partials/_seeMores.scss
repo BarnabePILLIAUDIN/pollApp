@@ -1,0 +1,13 @@
+#see-more{
+  color:$text1;
+  text-decoration:none;
+  margin-left: 75%;
+  font-size:1.5rem;
+  transition: 0.5s;
+  padding:1% 2%;
+  border: $border1;
+  &:hover{
+    background: $text1;
+    color:$bg1;
+  }
+}

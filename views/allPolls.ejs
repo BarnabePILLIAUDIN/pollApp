@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/style/allPolls.css" />
+    <title>Polls app</title>
+  </head>
+  <body>
+    <%- include("partials/navbar",{page:"allPolls",connected}) %>
+    <section class="pollcontainer">
+      <h2>Some polls</h2>
+      <% polls.forEach(({question,id},number) => {%>
+      <div class="poll-preview">
+        <h3><%= number+last-4%>: <%=question%></h3>
+        <a href=<%=`/vote/${id}`%>>Answer</a>
+      </div>
+      <%}) %>
+      <div class="link-container">
+        <div class="left">
+          <%if(last>5){%>
+          <a href="<%=`/allPolls/${last-5}`%>"
+            >Previous <%=last-9%>-<%=last-5%></a
+          >
+          <% }%>
+        </div>
+        <div class="right">
+          <% if(!includeLastPoll){%>
+          <a href="<%=`/allPolls/${last+5}`%>">Next <%=last+1%>-<%=last+5%></a
+          ><a href=""></a>
+        </div>
+        <%}%>
+      </div>
+    </section>
+    <script src="/javascript/handleNavbar.js"></script>
+  </body>
+</html>
